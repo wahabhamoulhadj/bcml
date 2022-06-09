@@ -118,3 +118,89 @@ for fname in glob.glob(path):
     print("Accuracy :", clf.best_score_)
 
     print("Test Accuracy:", clf.score(X_test, Y_test))
+
+
+
+'''
+Tuned Hyper parameters : {'C': 1.0, 'solver': 'newton-cg'}
+Accuracy : 0.8658333333333333
+Test Accuracy: 0.537037037037037
+Tuned Hyper parameters : {'C': 1.0, 'solver': 'newton-cg'}
+Accuracy : 0.5909913673071567
+Test Accuracy: 0.5407608695652174
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.8632732732732732
+Test Accuracy: 0.22151898734177217
+Tuned Hyper parameters : {'C': 10.0, 'solver': 'newton-cg'}
+Accuracy : 0.8154423654423655
+Test Accuracy: 0.5733333333333333
+Tuned Hyper parameters : {'C': 0.1, 'solver': 'newton-cg'}
+Accuracy : 0.7488888888888889
+Test Accuracy: 0.693069306930693
+Tuned Hyper parameters : {'C': 0.01, 'solver': 'newton-cg'}
+Accuracy : 0.5664676876289779
+Test Accuracy: 0.5848544973544973
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.7121701384424158
+Test Accuracy: 0.45782424812030076
+Tuned Hyper parameters : {'C': 0.1, 'solver': 'newton-cg'}
+Accuracy : 0.6306844935844935
+Test Accuracy: 0.6159430309734514
+Tuned Hyper parameters : {'C': 10.0, 'solver': 'newton-cg'}
+Accuracy : 0.7654001293391646
+Test Accuracy: 0.5006978908188585
+Tuned Hyper parameters : {'C': 10.0, 'solver': 'newton-cg'}
+Accuracy : 0.7164314593558259
+Test Accuracy: 0.5456543456543457
+Tuned Hyper parameters : {'C': 10.0, 'solver': 'newton-cg'}
+Accuracy : 0.8340547475050399
+Test Accuracy: 0.6085511741249447
+Tuned Hyper parameters : {'C': 0.001, 'solver': 'newton-cg'}
+Accuracy : 0.83421926910299
+Test Accuracy: 0.7857961053837343
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.8205384615384617
+Test Accuracy: 0.37284482758620685
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.7615909090909092
+Test Accuracy: 0.33970489604292425
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.7884126984126985
+Test Accuracy: 0.33606557377049184
+Tuned Hyper parameters : {'C': 1000.0, 'solver': 'newton-cg'}
+Accuracy : 0.8288023088023087
+Test Accuracy: 0.2582417582417582
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.416198419666374
+Test Accuracy: 0.2712643678160919
+Tuned Hyper parameters : {'C': 10.0, 'solver': 'newton-cg'}
+Accuracy : 0.8768498168498169
+Test Accuracy: 0.5441176470588236
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.7295193312434692
+Test Accuracy: 0.5211640211640212
+Tuned Hyper parameters : {'C': 1000.0, 'solver': 'newton-cg'}
+Accuracy : 0.7179305114638448
+Test Accuracy: 0.45687719936900867
+Tuned Hyper parameters : {'C': 1.0, 'solver': 'newton-cg'}
+Accuracy : 0.6937499999999999
+Test Accuracy: 0.575
+Tuned Hyper parameters : {'C': 0.001, 'solver': 'newton-cg'}
+Accuracy : 0.7964912280701755
+Test Accuracy: 0.9782608695652174
+Tuned Hyper parameters : {'C': 0.001, 'solver': 'newton-cg'}
+Accuracy : 0.6967171717171717
+Test Accuracy: 0.6754385964912281
+Tuned Hyper parameters : {'C': 10.0, 'solver': 'newton-cg'}
+Accuracy : 0.7902828282828283
+Test Accuracy: 0.5510204081632653
+Tuned Hyper parameters : {'C': 0.001, 'solver': 'newton-cg'}
+Accuracy : 0.7239393939393939
+Test Accuracy: 0.6979166666666666
+Tuned Hyper parameters : {'C': 1000.0, 'solver': 'newton-cg'}
+Accuracy : 0.5553503359385712
+Test Accuracy: 0.4747767857142857
+Tuned Hyper parameters : {'C': 100.0, 'solver': 'newton-cg'}
+Accuracy : 0.7394034686487515
+Test Accuracy: 0.5699152542372882
+'''
