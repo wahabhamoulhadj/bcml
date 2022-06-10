@@ -88,8 +88,6 @@ def main():
     for fname in glob.glob(path):
         df1 = pd.read_csv(fname)
 
-        df1['isBug'] = df1['isBug'].map({'YES': 1, 'NO': 0})  # Encoding isBig Coloumn
-
         df1.iloc[:, -1:].applymap(lambda x: {'YES': 1, 'NO': 0})
         X = df1.iloc[:, :-1]  # X contains the features
         Y = df1.iloc[:, -1:]  # Y is the target variable
