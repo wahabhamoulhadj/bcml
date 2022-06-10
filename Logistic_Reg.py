@@ -83,12 +83,10 @@ matplotlib.rcParams["figure.figsize"] = (20, 10)
 # plt.show()
 # print(cross_val_score(classifier, X_train, Y_train, cv=5))
 
-def main():
+def main(classifier, parameter_grid):
     path = "PROMIS/CK/*.csv"
     for fname in glob.glob(path):
         df1 = pd.read_csv(fname)
-
-        df1['isBug'] = df1['isBug'].map({'YES': 1, 'NO': 0})  # Encoding isBig Coloumn
 
         df1.iloc[:, -1:].applymap(lambda x: {'YES': 1, 'NO': 0})
         X = df1.iloc[:, :-1]  # X contains the features
@@ -105,12 +103,8 @@ def main():
         X_train = scaler.fit_transform(X_train)
 
         # Parameter Grid
-        parameters = {'C': np.logspace(-3, 3, 7),
-                      'solver': ['newton-cg', 'lbfgs']}
-
-        classifier = LogisticRegression()
         clf = GridSearchCV(classifier,  # model
-                           param_grid=parameters, refit=True,  # hyperparameters
+                           param_grid=parameter_grid, refit=True,  # hyperparameters
                            scoring='roc_auc_ovr_weighted',  # metric for scoring
                            cv=5, n_jobs=-1)  # Folds = 5
 
@@ -121,7 +115,9 @@ def main():
         print("Test Accuracy:", clf.score(X_test, Y_test))
 
 
-main()
+parameter_grid = {'C': np.logspace(-3, 3, 7), 'solver': ['newton-cg', 'lbfgs']}
+model = LogisticRegression()
+main(model, parameter_grid)
 
 '''
 Tuned Hyper parameters : {'C': 1.0, 'solver': 'newton-cg'}
