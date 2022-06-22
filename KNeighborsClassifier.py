@@ -24,7 +24,8 @@ def main(classifier, parameter_grid):
     for fname in glob.glob(path):
         df1 = pd.read_csv(fname)
 
-        df1.iloc[:, -1:].applymap(lambda x: {'YES': 1, 'NO': 0})
+        df1.isBug = df1.isBug.map(dict(YES=1, NO=0))
+
         X = df1.iloc[:, :-1]  # X contains the features
         Y = df1.iloc[:, -1:]  # Y is the target variable
 
@@ -45,7 +46,7 @@ def main(classifier, parameter_grid):
                            cv=5, n_jobs=-1)  # Folds = 5
 
         clf.fit(X_train, Y_train)  # Training
-
+        print(df1)
         print("Tuned Hyper parameters :", clf.best_params_)
         print("Accuracy :", clf.best_score_)
         print("Test Accuracy:", clf.score(X_test, Y_test))
