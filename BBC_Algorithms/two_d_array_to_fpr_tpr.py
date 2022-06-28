@@ -1,6 +1,6 @@
 import numpy as np
 
-from Algorithms.one_d_array_to_fpr_tpr import tpr_fpr
+from BBC_Algorithms.one_d_array_to_fpr_tpr import tpr_fpr
 
 
 def resp2pts(original, rs):
