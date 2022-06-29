@@ -1,17 +1,11 @@
 import glob
-
 import numpy as np
-
 from WPIBC_Algorithm.PBC_contngncy import contngncy
 from WPIBC_Algorithm.PBC_wtkappa import wtkappa
 from WPIBC_Algorithm.rocBug import roc_bug
-
 from scipy.stats.mstats import mquantiles
-
 from Tables.splitTable import split_table
-
 np.seterr(invalid='ignore')
-
 
 def wt_prune(val_scrs, val_lab, nb_thresh, kp_th):
     no_sd = len(val_scrs)

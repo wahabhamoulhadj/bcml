@@ -32,5 +32,5 @@ def auc_bbc(original, soft_detectors, nb_thresh = None):
         for j in crisp_detectors:
             for k in range(10):
                 bbc_array.append(bf_output(k, i, j))
-
-    return rocch(resp2pts(original, bbc_array)[0], resp2pts(original, bbc_array)[1])[2]
+    roc = rocch(resp2pts(original, bbc_array)[0], resp2pts(original, bbc_array)[1])
+    return roc[2], roc[0], roc[1]

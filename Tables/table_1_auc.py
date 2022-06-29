@@ -44,17 +44,15 @@ models = [GaussianNB(), RandomForestClassifier(), DecisionTreeClassifier(), Logi
 dir_path = "../PROMIS/CK/*.csv"  # Path to dataset
 
 random_variable = 42  # For a fixed random seed
-
+smpdf = six_models_prediction_data_frame(models, parameter_grid_models, dir_path, random_variable)
 # Saving the predict probability distributions in an array to decrease O(n).
 
-np.save('all_six_models_predict_proba', np.array(six_models_prediction_data_frame(models,
-                                                                                  parameter_grid_models, dir_path,
-                                                                                  random_variable)[0],
-                                                 dtype=object))
+np.save('all_six_models_predict_proba', np.array(smpdf[0], dtype=object))
+np.save('all_six_models_fpr', np.array(smpdf[2], dtype=object))
+np.save('all_six_models_tpr', np.array(smpdf[3], dtype=object))
 
 # Creating the Data Frame and Saving to 'AUC_Table')
 columns = ['NaiveBayes', 'RandomForest', 'DecisionTree', 'LogisticRegression', 'KNN', 'SVM']
-df = pd.DataFrame(six_models_prediction_data_frame(models, parameter_grid_models, dir_path, random_variable)[1],
-                  columns=columns)
+df = pd.DataFrame(smpdf[1],columns=columns)
 
 df.to_csv('AUC_Table.csv')
