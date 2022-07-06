@@ -57,16 +57,18 @@ for count in range(4):
     plt.plot(roc_curves_fpr_list[count][3], roc_curves_tpr_list[count][3], label="LogisticRegression")
     plt.plot(roc_curves_fpr_list[count][4], roc_curves_tpr_list[count][4], label="KNN")
     plt.plot(roc_curves_fpr_list[count][5], roc_curves_tpr_list[count][5], label="SVM")
-    plt.plot(bbc_fpr[count], bbc_tpr[count], label="BBC2")
-    plt.plot(ibc_fpr[count], ibc_tpr[count], label="IBC")
+    # plt.plot(bbc_fpr[count], bbc_tpr[count], label="BBC2")
+    # plt.plot(ibc_fpr[count], ibc_tpr[count], label="IBC")
     plt.legend(["Naive Bayes AUC : {}".format(df.iloc[count][0]),
                 "Random Forest AUC : {}".format(df.iloc[count][1]),
                 "Decision Tree AUC : {}".format(df.iloc[count][2]),
                 "Logistic Regression AUC : {}".format(df.iloc[count][3]),
                 "KNN AUC{} : ".format(df.iloc[count][4]),
-                "SVC AUC : {} ".format(df.iloc[count][5]),
-                "BBC2 AUC : {} ".format(pd.read_csv('../BBC_Algorithms/AUC_Table_BBC.csv').iloc[count][1]),
-                "IBC AUC : {} ".format(pd.read_csv('AUC_Table_IBC.csv').iloc[count][1])], loc='lower right')
+                "SVC AUC : {} ".format(df.iloc[count][5])], loc='lower right')
+                # "BBC2 AUC : {} ".format(pd.read_csv('../BBC_Algorithms/AUC_Table_BBC.csv').iloc[count][1]),
+                # "IBC AUC : {} ".format(pd.read_csv('AUC_Table_IBC.csv').iloc[count][1]
+
+
     plt.xlabel("FPR")
     plt.ylabel("TPR")
     plt.title('Receiver Operating Characteristic')
