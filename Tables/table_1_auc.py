@@ -36,8 +36,8 @@ parameter_grid_models = [{},
                           'criterion': ['gini', 'entropy', 'log_loss']},
                          {'C': np.logspace(-3, 3, 7), 'solver': ['newton-cg']},
                          {'n_neighbors': list(range(1, 15)), 'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute']},
-                         {'C': np.logspace(-3, 3, 7), 'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-                          'gamma': ['scale', 'auto']}]
+                         {'C': [0.1, 1, 10, 100], 'gamma': [1, 0.1, 0.01, 0.001],
+                          'kernel': ['linear', 'rbf', 'poly', 'sigmoid']}]
 models = [GaussianNB(), RandomForestClassifier(), DecisionTreeClassifier(), LogisticRegression(),
           KNeighborsClassifier(), svm.SVC(probability=True)]
 

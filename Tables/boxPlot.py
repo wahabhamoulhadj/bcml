@@ -14,6 +14,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 from Tables.SixModelsAUC_DF import six_models_prediction_data_frame
 from SixModelsAUC_DF import six_models_prediction_data_frame
+
 parameter_grid_models = [{},
                          {'max_depth': [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 'max_features': ['sqrt', 'log2'],
                           'criterion': ['gini', 'entropy', 'log_loss']},
@@ -21,10 +22,10 @@ parameter_grid_models = [{},
                           'criterion': ['gini', 'entropy', 'log_loss']},
                          {'C': np.logspace(-3, 3, 7), 'solver': ['newton-cg']},
                          {'n_neighbors': list(range(1, 15)), 'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute']},
-                         {'C': np.logspace(-3, 3, 7), 'kernel': ['linear', 'rbf', 'sigmoid'],
-                          'gamma': ['scale', 'auto']}]
+                         {'C': [0.1, 1, 10, 100], 'gamma': [1, 0.1, 0.01, 0.001],
+                          'kernel': ['linear', 'rbf', 'poly', 'sigmoid']}]
 models = [GaussianNB(), RandomForestClassifier(), DecisionTreeClassifier(), LogisticRegression(),
           KNeighborsClassifier(), svm.SVC(probability=True)]
-dir_path = '../PROMIS/CK_NET/velocity-1.6--CK_NET.csv'
+dir_path = '../PROMIS/CK_NET/xerces-1.3--CK_NET.csv'
 random_variable = 42
 print(six_models_prediction_data_frame(models, parameter_grid_models, dir_path, random_variable))
