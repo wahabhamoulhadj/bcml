@@ -43,7 +43,7 @@ for count in range(len(df)):
     plt.ylabel("TPR")
     plt.title(indexs[count])
     g = indexs[count][:-4]
-    plt.savefig("CK_ROC_Curves/ {}".format(g), format='png')
+    plt.savefig("CK_ROC_Curves/ {}.png".format(g), format='png')
 
     # plt.show()
 
