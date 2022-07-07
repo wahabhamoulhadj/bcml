@@ -28,7 +28,7 @@ import pandas as pd
 #
 from matplotlib import pyplot as plt
 
-df = pd.read_csv('../Tables/AUC_Table.csv')
+df = pd.read_csv('Results_Dataframes/CK_Results/CK.csv')
 df.drop(df.filter(regex="Unnamed"), axis=1, inplace=True)
 
 print(df.iloc[0][1])
@@ -48,7 +48,8 @@ bbc_fpr = np.array(bbc_fpr)
 
 ibc_fpr = np.load('ibc_roc_fpr.npy', allow_pickle=True)
 ibc_tpr = np.load('ibc_roc_tpr.npy', allow_pickle=True)
-
+print(df)
+print(df.index)
 for count in range(4):
     plt.plot([0, 1], [0, 1], 'k--')
     plt.plot(roc_curves_fpr_list[count][0], roc_curves_tpr_list[count][0], label="Naive Bayes")
@@ -57,16 +58,16 @@ for count in range(4):
     plt.plot(roc_curves_fpr_list[count][3], roc_curves_tpr_list[count][3], label="LogisticRegression")
     plt.plot(roc_curves_fpr_list[count][4], roc_curves_tpr_list[count][4], label="KNN")
     plt.plot(roc_curves_fpr_list[count][5], roc_curves_tpr_list[count][5], label="SVM")
-    # plt.plot(bbc_fpr[count], bbc_tpr[count], label="BBC2")
-    # plt.plot(ibc_fpr[count], ibc_tpr[count], label="IBC")
+    plt.plot(bbc_fpr[count], bbc_tpr[count], label="BBC2", marker = '^' )
+    plt.plot(ibc_fpr[count], ibc_tpr[count], label="IBC", marker = 'o')
     plt.legend(["Naive Bayes AUC : {}".format(df.iloc[count][0]),
                 "Random Forest AUC : {}".format(df.iloc[count][1]),
                 "Decision Tree AUC : {}".format(df.iloc[count][2]),
                 "Logistic Regression AUC : {}".format(df.iloc[count][3]),
                 "KNN AUC{} : ".format(df.iloc[count][4]),
-                "SVC AUC : {} ".format(df.iloc[count][5])], loc='lower right')
-                # "BBC2 AUC : {} ".format(pd.read_csv('../BBC_Algorithms/AUC_Table_BBC.csv').iloc[count][1]),
-                # "IBC AUC : {} ".format(pd.read_csv('AUC_Table_IBC.csv').iloc[count][1]
+                "SVC AUC : {} ".format(df.iloc[count][5]),
+                "BBC2 AUC : {} ".format(pd.read_csv('../BBC_Algorithms/AUC_Table_BBC.csv').iloc[count][1]),
+                "IBC AUC : {} ".format(pd.read_csv('AUC_Table_IBC.csv').iloc[count][1], loc='lower right')])
 
 
     plt.xlabel("FPR")
