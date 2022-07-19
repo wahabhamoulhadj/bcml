@@ -75,5 +75,5 @@ def ibcvr(scores, lab, nb_thresh=None, max_iter=None, tol=None, fun=None):
     return fpr, tpr, auc, ttb, rs
 
 
-# print(ibcvr(np.load('../Tables/all_six_models_predict_proba.npy', allow_pickle=True)[0],
-#             split_table('../PROMIS/CK/ant-1.3--CK.csv', 42,)[3], 12))
+# print(ibcvr(np.load('../Tables/CK_all_six_models_predict_proba.npy', allow_pickle=True)[0],
+#             split_table('../PROMIS/CK/ant-1.3--CK_all_auc.csv', 42,)[3], 12))

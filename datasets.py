@@ -9,5 +9,5 @@ for fname in glob.glob(path):
 l = pd.Series(l)
 df.drop(df.filter(regex="Unnamed"), axis=1, inplace=True)
 df = df.set_index(l)
-df.to_csv('Results_Dataframes/CK.csv')
+df.to_csv('Results_Dataframes/CK_all_auc.csv')
 print(df)

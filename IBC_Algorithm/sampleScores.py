@@ -20,4 +20,4 @@ def sample_scores(scores, nb_thresh=None):
 
     return thres
 
-# print(sample_scores( np.load('../Tables/all_six_models_predict_proba.npy', allow_pickle=True)[0][0], 10))
+# print(sample_scores( np.load('../Tables/CK_all_six_models_predict_proba.npy', allow_pickle=True)[0][0], 10))

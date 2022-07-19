@@ -5,7 +5,7 @@ from BBC_Algorithms.auc_bbc_algo import auc_bbc
 from Tables.splitTable import split_table
 
 path = "../PROMIS/CK/*.csv"
-all_predict_proba = np.load('../Tables/all_six_models_predict_proba.npy', allow_pickle=True)
+all_predict_proba = np.load('../Results_Dataframes/CK_Results/CK_all_six_models_predict_proba.npy', allow_pickle=True)
 random_seed = 42
 bbc_list = []
 bbc_fpr_list = []

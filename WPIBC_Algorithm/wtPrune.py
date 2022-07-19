@@ -98,7 +98,7 @@ def wt_prune(val_scrs, val_lab, nb_thresh, kp_th):
 
 # path = "../PROMIS/CK/*.csv"
 # wpibc_list = []
-# all_predict_proba = np.load('../Tables/all_six_models_predict_proba.npy', allow_pickle=True)
+# all_predict_proba = np.load('../Tables/CK_all_six_models_predict_proba.npy', allow_pickle=True)
 # for count, fname in enumerate(glob.glob(path)):
 #     soft_detectors = all_predict_proba[count]
 #     wpibc_list.append(wt_prune(soft_detectors, split_table(fname, 42)[3], 14, 0.8))

@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+import os
 
 df = pd.read_csv('CK_PROC_all_six_models_auc.csv')
 df1 = pd.read_csv('CK_PROC_all_auc.csv')
@@ -42,16 +43,16 @@ for count in range(len(df)):
     plt.plot(wpibc_fpr[count], wpibc_tpr[count], label="WPIBC", marker='^')
     plt.plot([0, 1], [0, 1], 'k--')
 
-    plt.legend(["Naive Bayes AUC : {}".format(df.iloc[count][1]),
-                "Random Forest AUC : {}".format(df.iloc[count][2]),
-                "Decision Tree AUC : {}".format(df.iloc[count][3]),
-                "Logistic Regression AUC : {}".format(df.iloc[count][4]),
-                "KNN AUC : {} ".format(df.iloc[count][5]),
-                "SVC AUC : {} ".format(df.iloc[count][6]),
-                "BBC2 AUC : {} ".format(pd.read_csv('CK_PROC_BBC_AUC_Table.csv').iloc[count][1]),
-                "IBC AUC : {} ".format(pd.read_csv('CK_PROC_AUC_Table_IBC.csv').iloc[count][1]),
-                "WPBC2 AUC : {} ".format(pd.read_csv('CK_PROC_WPBC2_AUC_Table.csv').iloc[count][1]),
-                "WPIBC AUC : {} ".format(pd.read_csv('CK_PROC_AUC_Table_WPIBC.csv').iloc[count][1]),], loc='lower right')
+    plt.legend(["Naive Bayes AUC : {:.3f}".format(df.iloc[count][1]),
+                "Random Forest AUC : {:.3f}".format(df.iloc[count][2]),
+                "Decision Tree AUC : {:.3f}".format(df.iloc[count][3]),
+                "Logistic Regression AUC : {:.3f}".format(df.iloc[count][4]),
+                "KNN AUC : {:.3f} ".format(df.iloc[count][5]),
+                "SVC AUC : {:.3f} ".format(df.iloc[count][6]),
+                "BBC2 AUC : {:.3f} ".format(pd.read_csv('CK_PROC_BBC_AUC_Table.csv').iloc[count][1]),
+                "IBC AUC : {:.3f} ".format(pd.read_csv('CK_PROC_AUC_Table_IBC.csv').iloc[count][1]),
+                "WPBC2 AUC : {:.3f} ".format(pd.read_csv('CK_PROC_WPBC2_AUC_Table.csv').iloc[count][1]),
+                "WPIBC AUC : {:.3f} ".format(pd.read_csv('CK_PROC_AUC_Table_WPIBC.csv').iloc[count][1]),], loc='lower right')
 
     plt.xlabel("FPR")
     plt.ylabel("TPR")
@@ -60,3 +61,6 @@ for count in range(len(df)):
     plt.savefig(r"CK_PROC_ROC_Curves/ {}.png".format(g), format='png')
 
     # plt.show()
+# directory = r'CK_PROC_ROC_Curves'
+# for filename in os.listdir(directory):
+#     os.rename(filename, filename+".png")

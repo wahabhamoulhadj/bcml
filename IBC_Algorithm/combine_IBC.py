@@ -28,7 +28,7 @@ import pandas as pd
 #
 from matplotlib import pyplot as plt
 
-df = pd.read_csv('Results_Dataframes/CK_Results/CK.csv')
+df = pd.read_csv('Results_Dataframes/CK_Results/CK_all_auc.csv')
 df.drop(df.filter(regex="Unnamed"), axis=1, inplace=True)
 
 print(df.iloc[0][1])
@@ -39,8 +39,8 @@ print(pd.read_csv('../BBC_Algorithms/AUC_Table_BBC.csv').iloc[0][1])
 # df.to_csv('../Tables/AUC_Table.csv', index=False)
 import numpy as np
 #
-roc_curves_tpr_list = np.load('../Tables/all_six_models_tpr.npy', allow_pickle=True)
-roc_curves_fpr_list = np.load('../Tables/all_six_models_fpr.npy', allow_pickle=True)
+roc_curves_tpr_list = np.load('../Results_Dataframes/CK_Results/CK_all_six_models_tpr.npy', allow_pickle=True)
+roc_curves_fpr_list = np.load('../Results_Dataframes/CK_Results/CK_all_six_models_fpr.npy', allow_pickle=True)
 bbc_fpr = np.load('../BBC_Algorithms/bbc_roc_fpr.npy', allow_pickle=True)
 bbc_tpr = np.load('../BBC_Algorithms/bbc_roc_tpr.npy', allow_pickle=True)
 bbc_tpr = np.array(bbc_tpr)

@@ -18,7 +18,7 @@ parameter_grid_models = [{},
                          {'C': np.logspace(-3, 3, 7), 'solver': ['newton-cg']},
                          {'n_neighbors': list(range(1, 15)), 'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute']},
                          {'C': [0.1, 1, 10], 'gamma': [1, 0.1, 0.01],
-                          'kernel': ['linear']}]
+                          'kernel': ['rbf'], 'tol': [0.001], 'max_iter': [10000]}]
 models = [GaussianNB(), RandomForestClassifier(), DecisionTreeClassifier(), LogisticRegression(),
           KNeighborsClassifier(), svm.SVC(probability=True)]
 
