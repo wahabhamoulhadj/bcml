@@ -20,6 +20,9 @@ bbc_tpr = np.load('NET_bbc_roc_tpr.npy', allow_pickle=True)
 ibc_fpr = np.load('NET_ibc_roc_fpr.npy', allow_pickle=True)
 ibc_tpr = np.load('NET_ibc_roc_tpr.npy', allow_pickle=True)
 
+pbc_fpr = np.load('NET_pbc_roc_fpr.npy', allow_pickle=True)
+pbc_tpr = np.load('NET_pbc_roc_tpr.npy', allow_pickle=True)
+
 wpibc_fpr = np.load('NET_wpibc_roc_fpr.npy', allow_pickle=True)
 wpibc_tpr = np.load('NET_wpibc_roc_tpr.npy', allow_pickle=True)
 
@@ -39,6 +42,7 @@ for count in range(len(df)):
     plt.plot(roc_curves_fpr_list[count][5], roc_curves_tpr_list[count][5], label="SVM")
     plt.plot(bbc_fpr[count], bbc_tpr[count], label="BBC2", marker='s')
     plt.plot(ibc_fpr[count], ibc_tpr[count], label="IBC", marker='o')
+    plt.plot(pbc_fpr[count], pbc_tpr[count], label="PBC", marker='o')
     plt.plot(wpbc2_fpr[count], wpbc2_tpr[count], label="WPBC2", marker='D')
     plt.plot(wpibc_fpr[count], wpibc_tpr[count], label="WPIBC", marker='^')
     plt.plot([0, 1], [0, 1], 'k--')
@@ -51,6 +55,7 @@ for count in range(len(df)):
                 "SVC AUC : {:.3f} ".format(df.iloc[count][6]),
                 "BBC2 AUC : {:.3f} ".format(pd.read_csv('NET_BBC_AUC_Table.csv').iloc[count][1]),
                 "IBC AUC : {:.3f} ".format(pd.read_csv('NET_AUC_Table_IBC.csv').iloc[count][1]),
+                "PBC AUC : {:.3f} ".format(pd.read_csv('NET_PBC_AUC_Table.csv').iloc[count][1]),
                 "WPBC2 AUC : {:.3f} ".format(pd.read_csv('NET_WPBC2_AUC_Table.csv').iloc[count][1]),
                 "WPIBC AUC : {:.3f} ".format(pd.read_csv('NET_AUC_Table_WPIBC.csv').iloc[count][1]),], loc='lower right')
 

@@ -1,7 +1,7 @@
 import glob
 import numpy as np
 import pandas as pd
-from BBC_Algorithms.auc_bbc_algo import auc_bbc
+from BBC_Algorithms.BBC_Algorithm import BBC_Algo
 from Tables.splitTable import split_table
 
 path = "../../PROMIS/NET/*.csv"
@@ -13,7 +13,7 @@ bbc_fpr_list = []
 bbc_tpr_list = []
 for count, fname in enumerate(glob.glob(path)):
     soft_detectors = all_predict_proba[count]
-    ab = auc_bbc(split_table(fname, random_seed)[3], soft_detectors, 12)
+    ab = BBC_Algo(split_table(fname, random_seed)[3], soft_detectors, 12)
     bbc_list.append(ab[0])
     bbc_fpr_list.append(ab[1])
     bbc_tpr_list.append(ab[2])
