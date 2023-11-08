@@ -59,14 +59,6 @@ Dive deep into our organized repository to navigate through datasets, algorithms
 
 Peruse individual directories for a deeper understanding of each algorithm and dataset.
 
-## 📊 Performance & Implications
-
-Our ensemble models showcase a notable edge in defect prediction, often surpassing standalone ML classifiers and even certain deep learning approaches. This can revolutionize:
-
-- Development and QA processes in software companies.
-- Defect detection mechanisms in cybersecurity firms.
-- Quality assurance in large-scale open-source projects.
-
 ## 👥 Contributors
 
 - **Authors**: Mohammed A. Shehab, Prof. Abdelwahab Hamou-Lhadj and Venkata Sai Gunda
