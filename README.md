@@ -1,41 +1,80 @@
-This repository contains the datasets, results, and scripts used for the project "DeepTracing: Using AI to detect anomalies in large execution traces." We developed ensembles using Boolean Combination Algorithms(BCAs) and six heterogeneous Machine Learning (ML) classifiers to predict software defects.
+# JITBoost: An Enhanced Approach to Just-In-Time Defect Prediction
 
-We used five BCAs: BBC2, IBC, PBC2, WPBC2, and WPIBC.
+## 🌟 Introduction
 
-We used six ML classifiers: Random Forest, Decision Tree, Logistic Regression, Naive Bayes, KNN, and SVM.
+"JITBoost" stands at the intersection of artificial intelligence and software defect prediction. In an era dominated by expansive software architectures, our initiative introduces an ensemble approach by integrating Boolean Combination Algorithms (BCAs) with traditional Machine Learning (ML) classifiers. This amalgamation aims to refine the accuracy and efficiency of defect prediction within vast execution traces.
 
-The repository is organised as follows:
+## 🚀 Problem Overview
 
-1. PROMIS: Contains the datasets that we've used in this project. It contains six metrics: CK, CK_NET, CK_PROC, NET, NET_PROC, and CK_NET_PROC, each containing 27 datasets.
+The ever-growing complexity of software systems brings forth enormous execution traces, making the early identification of software anomalies paramount. Our solution leverages ensemble techniques, combining the strengths of multiple classifiers to address this challenge head-on.
 
-2. Results_Dataframes: Contains all the result dataframes and Reciever Operating Characteristics (ROC) curves.
+## 💡 Core Components
 
-3. Tables: Scripts for cross-validation and training for all ML classifiers are included.
+### Boolean Combination Algorithms (BCAs)
 
-4. BBC2_Algorithm: Contains the Python script related to Pair-wise Brute-force Boolean Combination (BBC2)
+- **BBC2**: Pair-wise Brute-force Boolean Combination
+- **IBC**: Iterative Boolean Combination
+- **PBC2**: Pruning Boolean Combination
+- **WPBC2**: Weighted Pruning Boolean Combination
+- **WPIBC**: Weighted Iterative Boolean Combination
 
-5. IBC_Algorithm : Contains the Python script related to Iterative Boolean Combination (IBC)
+### Machine Learning (ML) Classifiers
 
-6. PBC2_Algorithm : Contains the Python script related to Pruning Boolean Combination (PBC)
+- Random Forest
+- Decision Tree
+- Logistic Regression
+- Naive Bayes
+- KNN
+- SVM
 
-7. WPBC2_Algorithm : Contains the Python script related to Weighted Pruning Boolean Combination (WPBC2)
+## 📂 Repository Structure
 
-8. WPIBC_Algorithms : Contains the Python script related to Weighted Iterative Boolean Combination (WPIBC)
+Dive deep into our organized repository to navigate through datasets, algorithms, and results:
 
-9. The slides and other resources provide a high-level overview of the algorithms' internal workings and the end-to-end pipeline.
+### 🌱 **PROMIS**: The Dataset Hub
+  - **Metrics**:
+    - CK
+    - CK_NET
+    - CK_PROC
+    - NET
+    - NET_PROC
+    - CK_NET_PROC
+  - Each metric is complemented by 27 unique datasets.
 
+### 📈 **Results_Dataframes**
+  - Comprehensive dataframes displaying our ensemble's performance.
+  - In-depth visual Receiver Operating Characteristics (ROC) curves.
 
-Authors: Mohammed A. Shehab, Venkata Sai Gunda, and Prof. Abdelwahab Hamou-Lhadj
+### 🔧 **Tables**
+  - Scripts for:
+    - Cross-validation
+    - ML classifier training.
 
-Institutions: Concordia University and IIT Kharagpur
+### 📜 **Algorithms**
+  - `BBC2_Algorithm`: Python script detailing the BBC2 logic.
+  - `IBC_Algorithm`: Delve into the IBC technique.
+  - `PBC2_Algorithm`: Explore the PBC approach.
+  - `WPBC2_Algorithm`: Script for WPBC2 logic.
+  - `WPIBC_Algorithms`: Breakdown of the WPIBC method.
 
+Peruse individual directories for a deeper understanding of each algorithm and dataset.
 
+## 📊 Performance & Implications
 
+Our ensemble models showcase a notable edge in defect prediction, often surpassing standalone ML classifiers and even certain deep learning approaches. This can revolutionize:
 
-For any questions regarding the repository and/or the paper,
+- Development and QA processes in software companies.
+- Defect detection mechanisms in cybersecurity firms.
+- Quality assurance in large-scale open-source projects.
 
-please contact:
+## 👥 Contributors
 
-Professor Wahab Hamou-Lhadj
+- **Authors**: Mohammed A. Shehab, Prof. Abdelwahab Hamou-Lhadj and Venkata Sai Gunda
+- **Affiliations**: Concordia University & IIT Kharagpur
 
-wahab.hamou-lhadj@concordia.ca
+## 📞 Connect with Us
+
+For inquiries, feedback, or partnership opportunities:
+
+**Professor Wahab Hamou-Lhadj**
+📧 Email: [wahab.hamou-lhadj@concordia.ca](mailto:wahab.hamou-lhadj@concordia.ca)
